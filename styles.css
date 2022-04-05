@@ -1,0 +1,15 @@
+body {
+  background-color: #16393c;
+}
+.author {
+  color: white;
+}
+.neuralNet {
+  position: absolute;
+  width: 50em;
+  align-content: center;
+}
+.signBtn {
+  position: relative;
+  text-align: justify right;
+}
