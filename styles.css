@@ -7,7 +7,7 @@ body {
 }
 .signBtn {
   display: flex;
-  position: ;
+  position: fixed;
 }
 
 .neuralNet {
