@@ -10,6 +10,7 @@ body {
   margin-bottom: 1rem;
 }
 .authors {
+  font-size: 1.5rem;
   font-weight: none;
 }
 .authors:hover {
@@ -21,7 +22,7 @@ body {
   display: flex;
 }
 .pages li {
-  font-size: larger;
+  font-size: 1.5rem;
   list-style: none;
 }
 .pages li a {
@@ -33,13 +34,22 @@ body {
 .pages li:hover {
   text-decoration: underline wavy;
 }
-
+.titleImage {
+  font-size: 2rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: bolder;
+  padding-top: 75px;
+}
 .neuralNet {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
   filter: brightness(65%);
+}
+.neuralNet:hover {
+  filter: invert(75%);
 }
 
 .homeBtn {
@@ -49,6 +59,13 @@ body {
 }
 .homeBtn:hover {
   text-decoration: underline wavy;
+}
+.formLink {
+  text-decoration: none;
+  color: white;
+}
+.formLink:hover {
+  text-decoration: underline double;
 }
 .inputEmail {
   padding-bottom: 5px;
