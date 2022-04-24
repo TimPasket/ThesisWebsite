@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 from .models import *
+from .forms import newUserForm
 
 def homePage (request):
   return render(request, 'users/index.html')
@@ -13,10 +14,16 @@ def glossaryPage (request):
   return render(request, 'users/glossary.html')
 
 def registerPage(request):
-  form = UserCreationForm()
-  context = {'form'}
-  return render(request, 'users/register.html')
+  form = newUserForm()
+
+  if request.method == 'POST':
+    form = newUserForm(request.POST)
+    if form.is_valid():
+      form.save()
+
+  context = {'form':form}
+  return render(request, 'users/register.html', context)
 
 def loginPage(request):
-  context = {'form'}
-  return render(request, 'users/login.html')
+  context = {}
+  return render(request, 'users/login.html', context)

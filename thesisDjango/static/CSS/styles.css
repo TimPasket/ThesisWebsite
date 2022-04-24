@@ -61,13 +61,10 @@ body {
 .homeBtn:hover {
   text-decoration: underline wavy;
 }
-.formLink {
-  text-decoration: none;
-  color: white;
+
+.line {
+  margin-top: 2rem;
 }
-.formLink:hover {
-  text-decoration: underline double;
-}
-.inputEmail {
-  padding-bottom: 5px;
+.regTitle {
+  text-align: center;
 }
