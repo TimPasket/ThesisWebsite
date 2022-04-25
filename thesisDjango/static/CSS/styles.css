@@ -2,7 +2,6 @@ body {
   background-color: #16393c;
   color: white;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -61,10 +60,33 @@ body {
 .homeBtn:hover {
   text-decoration: underline wavy;
 }
-
 .line {
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 .regTitle {
+  display: block;
+  position: relative;
   text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
+}
+.regTitle:hover {
+  text-shadow: 2px 2px 8px red;
+}
+.regForm {
+  text-align: center;
+  background-color: #8391914f;
+  margin-left: 28%;
+  margin-right: 30%;
+  outline: 5px solid #4a4a4a4f;
+}
+.helptext {
+  display: none;
+}
+.regForm li {
+  margin: 2rem;
+  font-size: 2rem;
+}
+.submit {
+  font-size: large;
 }
