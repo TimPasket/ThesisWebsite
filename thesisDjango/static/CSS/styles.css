@@ -73,7 +73,8 @@ body {
 .regTitle:hover {
   text-shadow: 2px 2px 8px red;
 }
-.regForm {
+.regForm,
+.logForm {
   text-align: center;
   background-color: #8391914f;
   margin-left: 28%;
@@ -83,10 +84,16 @@ body {
 .helptext {
   display: none;
 }
+.regForm ul,
+.logForm ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 .regForm li {
   margin: 2rem;
   font-size: 2rem;
 }
 .submit {
-  font-size: large;
+  font-size: larger;
 }
