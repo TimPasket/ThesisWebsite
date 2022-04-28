@@ -63,7 +63,8 @@ body {
 .line {
   margin-top: 5rem;
 }
-.regTitle {
+.regTitle,
+.logTitle {
   display: block;
   position: relative;
   text-align: center;
@@ -90,7 +91,8 @@ body {
   padding: 0;
   margin: 0;
 }
-.regForm li {
+.regForm p,
+.logForm p {
   margin: 2rem;
   font-size: 2rem;
 }

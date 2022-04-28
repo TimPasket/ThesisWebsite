@@ -12,20 +12,18 @@
 <body>
   <a class="homeBtn" href="../index.html">Home</a>
   <div class="login">
-    <h2>Login!</h2>
+    <h2 class="logTitle">Login!</h2>
     <form class="logForm" method="POST" action="">
-      {% csrf_token %}
-      <ul>
-        <li>
-          <label for="loginUsername">Username: </label>
-          <input class="loginUsername" type="text" />
-        </li>
-        <li>
-          <label for="loginPassword">Password: </label>
-          <input class="loginPassword" type="text" />
-        </li>
-        <input class="submit" type="submit" name="Login" value="Login" />
-      </ul>
+      {% csrf_token %} {{form.as_p}}
+      <input class="submit" type="submit" name="Login" value="Login" />
+
+      {% for message in messages %}
+      <p>{{message}}</p>
+      {% endfor %}
+
+      <span>
+        Don't have an account? <a href="../register.html">Register here</a>
+      </span>
     </form>
   </div>
 </body>
