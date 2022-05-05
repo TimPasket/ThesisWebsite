@@ -1,10 +1,11 @@
 from django.urls import path
+from .views import homePage
 from .import views
 
 urlpatterns = [
-    path('index.html', views.homePage, name="home"),
-    path('glossary.html', views.glossaryPage, name="Glossary"),
-    path('register.html', views.registerPage, name='register'),
-    path('login.html', views.loginPage, name='login'),
+    path('', homePage.as_view(), name='home'),
+    path('glossary', views.glossaryPage, name='glossary'),
+    path('register', views.registerPage, name='register'),
+    path('login', views.loginPage, name='login'),
     path('logout', views.logoutUser, name='logout')
 ]

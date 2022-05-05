@@ -13,13 +13,13 @@
       <div class="authors">Author: Timothy Pasket</div>
       <div class="pages">
         <ul>
-          <li><a href="glossary.html">Glossary</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
+          <li><a href="{% url 'glossary' %}">Glossary</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
         </ul>
         <div class="login">
           Logged in as {{request.user}}
-          <span><a href="login.html">Logout</a></span>
+          <span><a href="{% url 'login' %}">Logout</a></span>
         </div>
       </div>
     </nav>
@@ -34,6 +34,14 @@
     <div class="blogSection">
       <hr class="line" />
       <h2>BLOG GOES HERE</h2>
+      <ul>
+        {% for post in object_list %}
+        <li>
+          {{ post.title }} - {{ post.author }}<br />
+          {{ post.body }}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </body>
 </html>

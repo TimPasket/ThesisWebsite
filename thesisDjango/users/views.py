@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -6,11 +7,14 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 # Create your views here.
-from .models import *
+from .models import Post
 from .forms import newUserForm
 
-def homePage (request):
-  return render(request, 'users/index.html')
+# def homePage(request):
+#   return render(request, 'users/index.html')
+class homePage(ListView):
+  model = Post
+  template_name = 'index.html'
 
 def glossaryPage (request):
   return render(request, 'users/glossary.html')
