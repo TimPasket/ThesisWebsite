@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
+    <title>Python ML Blog</title>
+  </head>
+  <body>
+    <nav class="header">
+      <div class="authors">Author: Timothy Pasket</div>
+      <div class="pages">
+        <ul>
+          <li><a href="glossary.html">Glossary</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+        <div class="login">
+          Logged in as {{request.user}}
+          <span><a href="login.html">Logout</a></span>
+        </div>
+      </div>
+    </nav>
+    <div class="titleImage">
+      Become the Next MVP of the League
+      <img
+        class="neuralNet"
+        src="{% static '/Images/basketball.jpg' %}"
+        alt="machineLearningImage"
+      />
+    </div>
+    <div class="blogSection">
+      <hr class="line" />
+      <h2>BLOG GOES HERE</h2>
+    </div>
+  </body>
+</html>

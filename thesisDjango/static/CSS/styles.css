@@ -2,7 +2,6 @@ body {
   background-color: #16393c;
   color: white;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -14,7 +13,7 @@ body {
   font-weight: none;
 }
 .authors:hover {
-  cursor: grab;
+  cursor: grabbing;
 }
 .pages ul {
   margin: 0;
@@ -61,13 +60,42 @@ body {
 .homeBtn:hover {
   text-decoration: underline wavy;
 }
-.formLink {
-  text-decoration: none;
-  color: white;
+.line {
+  margin-top: 5rem;
 }
-.formLink:hover {
-  text-decoration: underline double;
+.regTitle,
+.logTitle {
+  display: block;
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
 }
-.inputEmail {
-  padding-bottom: 5px;
+.regTitle:hover {
+  text-shadow: 2px 2px 8px red;
+}
+.regForm,
+.logForm {
+  text-align: center;
+  background-color: #8391914f;
+  margin-left: 28%;
+  margin-right: 30%;
+  outline: 5px solid #4a4a4a4f;
+}
+.helptext {
+  display: none;
+}
+.regForm ul,
+.logForm ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.regForm p,
+.logForm p {
+  margin: 2rem;
+  font-size: 2rem;
+}
+.submit {
+  font-size: larger;
 }
