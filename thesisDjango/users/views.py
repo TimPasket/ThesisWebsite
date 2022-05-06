@@ -15,6 +15,9 @@ from .forms import newUserForm
 class homePage(ListView):
   model = Post
   template_name = 'index.html'
+class postDetailsPage(DetailView):
+  model = Post
+  template_name = 'postDetails.html'
 
 def glossaryPage (request):
   return render(request, 'users/glossary.html')

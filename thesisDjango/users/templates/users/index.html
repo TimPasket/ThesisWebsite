@@ -24,24 +24,20 @@
       </div>
     </nav>
     <div class="titleImage">
-      Become the Next MVP of the League
-      <img
-        class="neuralNet"
-        src="{% static '/Images/basketball.jpg' %}"
-        alt="machineLearningImage"
-      />
+      <h2 class="titleH2">Become the Next MVP of the League</h2>
+      <div class="mjGif"></div>
     </div>
     <div class="blogSection">
       <hr class="line" />
-      <h2>BLOG GOES HERE</h2>
-      <ul>
+      <section>
         {% for post in object_list %}
-        <li>
-          {{ post.title }} - {{ post.author }}<br />
+        <p class="onePost">
+          <a href="{% url 'postDetails' post.pk %}"> {{ post.title }}</a> -
+          {{post.author.first_name}} {{post.author.last_name}} <br />
           {{ post.body }}
-        </li>
+        </p>
         {% endfor %}
-      </ul>
+      </section>
     </div>
   </body>
 </html>
