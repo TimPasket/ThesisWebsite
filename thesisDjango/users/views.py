@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -15,11 +15,17 @@ from .forms import newUserForm
 class homePage(ListView):
   model = Post
   template_name = 'index.html'
+  
 class postDetailsPage(DetailView):
   model = Post
   template_name = 'postDetails.html'
 
-def glossaryPage (request):
+class addPostPage(CreateView):
+  model = Post
+  template_name = 'addPost.html'
+  fields = '__all__'
+
+def glossaryPage(request):
   return render(request, 'users/glossary.html')
 
 def registerPage(request):

@@ -28,6 +28,7 @@
       <div class="mjGif"></div>
     </div>
     <div class="blogSection">
+      <a class="addPostLink" href="{% url 'addPostPage' %}">Add New Post</a>
       <hr class="line" />
       <section>
         {% for post in object_list %}
@@ -36,6 +37,7 @@
           {{post.author.first_name}} {{post.author.last_name}} <br />
           {{ post.body }}
         </p>
+        <hr />
         {% endfor %}
       </section>
     </div>
