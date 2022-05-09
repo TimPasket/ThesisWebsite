@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
-    <title>Python ML Blog</title>
+    <title>{{post.title}} Details</title>
   </head>
   <body>
     <h1>{{post.title}}</h1>
     <small>By: {{post.author.first_name}} {{post.author.last_name}} </small>
     <br />
+    <a href="{% url 'editPost' post.pk %}">Edit?</a>
+    <a href="{% url 'deletePost' post.pk %}">Delete?</a>
     <hr />
     <br />
     {{post.body}}
