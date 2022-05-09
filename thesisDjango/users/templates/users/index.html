@@ -19,7 +19,7 @@
         </ul>
         <div class="login">
           Logged in as {{request.user}}
-          <span><a href="{% url 'login' %}">Logout</a></span>
+          <span><a href="{% url 'logout' %}">Logout</a></span>
         </div>
       </div>
     </nav>
@@ -34,7 +34,7 @@
         {% for post in object_list %}
         <p class="onePost">
           <a href="{% url 'postDetails' post.pk %}"> {{ post.title }}</a> -
-          {{post.author.first_name}} {{post.author.last_name}} <br />
+          {{post.author.username}} <br />
           {{ post.body }}
         </p>
         <hr />

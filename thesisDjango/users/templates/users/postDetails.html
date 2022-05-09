@@ -10,10 +10,12 @@
   </head>
   <body>
     <h1>{{post.title}}</h1>
-    <small>By: {{post.author.first_name}} {{post.author.last_name}} </small>
+    <small>By: {{post.author.username}} </small>
     <br />
+    {% if user.is_authenticated %} {%if request.user.id == post.author.id %}
     <a href="{% url 'editPost' post.pk %}">Edit?</a>
     <a href="{% url 'deletePost' post.pk %}">Delete?</a>
+    {% endif %} {% endif %}
     <hr />
     <br />
     {{post.body}}

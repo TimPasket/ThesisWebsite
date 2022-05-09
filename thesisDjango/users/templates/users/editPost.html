@@ -10,10 +10,19 @@
   </head>
   <body>
     <a class="homeBtn" href="{% url 'home' %}">Home</a>
-    <h1>Edit your Post</h1>
-    <form method="POST">
-      {% csrf_token %}
-      {{form.as_p}}
-      <button>Edit</button>
+    {% if user.is_authenticated %}
+      {% if request.user.id == post.author.id%}
+        <h1>Edit your Post</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button>Edit</button>
+      {% else %}
+        WARNING: YOU ARE NOT AUTHORIZED TO EDIT IT POST
+      {% endif %}
+    {%else%}
+        WARNING: YOU ARE NOT AUTHORIZED TO EDIT IT POST
+    {% endif %}
+      
   </body>
 </html>
