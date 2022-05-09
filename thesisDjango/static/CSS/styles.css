@@ -15,6 +15,9 @@ body {
 .authors:hover {
   cursor: grabbing;
 }
+.titleH2:hover {
+  color: black;
+}
 .pages ul {
   margin: 0;
   padding: 0;
@@ -40,16 +43,18 @@ body {
   font-weight: bolder;
   padding-top: 75px;
 }
-.neuralNet {
-  display: block;
+.mjGif {
+  background-color: aqua;
+  background-image: url("../Images/basketball.jpg");
   margin-left: auto;
   margin-right: auto;
   aspect-ratio: 2 / 1;
-  width: 60%;
+  width: 50%;
   filter: brightness(65%);
 }
-.neuralNet:hover {
-  filter: invert(75%);
+
+.mjGif:hover {
+  background-image: url("../Images/Michael-Jordan-Dunks-Basketball-Animated-Gif-Hot.gif");
 }
 
 .homeBtn {
@@ -91,6 +96,12 @@ body {
   padding: 0;
   margin: 0;
 }
+.regForm a,
+.logForm a {
+  text-decoration: underline solid;
+  text-decoration-thickness: calc(3px);
+  color: whitesmoke;
+}
 .regForm p,
 .logForm p {
   margin: 2rem;
@@ -98,4 +109,19 @@ body {
 }
 .submit {
   font-size: larger;
+}
+.blogSection {
+  font-size: 2em;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.blogSection p a {
+  color: cornflowerblue;
+  font-size: 1.5em;
+}
+.blogSection p {
+  margin-bottom: 2em;
+}
+.onePost a:hover {
+  background-color: #215155;
 }

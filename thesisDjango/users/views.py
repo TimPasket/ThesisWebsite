@@ -1,18 +1,42 @@
 from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.urls import reverse_lazy
 
 # Create your views here.
-from .models import *
+from .models import Post
 from .forms import newUserForm
 
-def homePage (request):
-  return render(request, 'users/index.html')
+class homePage(ListView):
+  model = Post
+  template_name = 'index.html'
+  ordering = ['-id']
+  
+class postDetailsPage(DetailView):
+  model = Post
+  template_name = 'postDetails.html'
 
-def glossaryPage (request):
+class addPostPage(CreateView):
+  model = Post
+  template_name = 'addPost.html'
+  fields = '__all__'
+
+class editPostPage(UpdateView):
+  model = Post
+  template_name = 'editPost.html'
+  fields = ['title', 'body']
+
+class deletePostPage(DeleteView):
+  model = Post
+  template_name = 'deletePost.html'
+  success_url = reverse_lazy('home')
+
+def glossaryPage(request):
   return render(request, 'users/glossary.html')
 
 def registerPage(request):
