@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-from .views import homePage, postDetailsPage, addPostPage, editPostPage, deletePostPage
+from .views import homePage, postDetailsPage, addPostPage, editPostPage, deletePostPage, addCommentPage
 from .import views
 
 urlpatterns = [
@@ -9,6 +9,7 @@ urlpatterns = [
     path('add-Post', login_required(addPostPage.as_view(),login_url='login'), name='addPost'),
     path('post/edit/<int:pk>', login_required(editPostPage.as_view(),login_url='login'), name='editPost'),
     path('post/<int:pk>/delete', login_required(deletePostPage.as_view(),login_url='login'), name='deletePost'),
+    path('post/<int:pk>/comment', addCommentPage.as_view(), name='addComment'),
     path('glossary', views.glossaryPage, name='glossary'),
     path('register', views.registerPage, name='register'),
     path('login', views.loginPage, name='login'),

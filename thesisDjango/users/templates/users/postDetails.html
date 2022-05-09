@@ -9,18 +9,34 @@
     <title>{{post.title}} Details</title>
   </head>
   <body>
+    <a class="homeBtn" href="{% url 'home' %}">Home</a>
     <h1>{{post.title}}</h1>
     <small>By: {{post.author.username}} </small>
     <br />
     {% if user.is_authenticated %} {%if request.user.id == post.author.id %}
+    <div class='editOr'>
     <a href="{% url 'editPost' post.pk %}">Edit?</a>
     <a href="{% url 'deletePost' post.pk %}">Delete?</a>
     {% endif %} {% endif %}
+    </div>
     <hr />
     <br />
     {{post.body}}
     <br />
     <br />
-    <a class="homeBtn" href="{% url 'home' %}">Back</a>
+    <h2>Comment Section:</h2>
+    {% if not post.comments.all %}
+      No comments yet...<a href"{% url 'addComment' post.pk %}">Add one</a>
+    {%else%}
+      {% for comment in post.comments.all %}
+        <strong>
+        {{comment.name}} - {{comment.dateAdded}}
+        </strong>
+        <br>
+        {{comment.body}}
+        <br><br>
+        {% endfor %}
+    {% endif %}
+    <a class="addComment" href="{% url 'addComment' post.pk %}">Add a Comment</a>
   </body>
 </html>

@@ -9,8 +9,8 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 
 # Create your views here.
-from .models import Post
-from .forms import newUserForm
+from .models import Post, Comment
+from .forms import newUserForm, commentForm
 
 class homePage(ListView):
   model = Post
@@ -35,6 +35,17 @@ class deletePostPage(DeleteView):
   model = Post
   template_name = 'deletePost.html'
   success_url = reverse_lazy('home')
+
+class addCommentPage(CreateView):
+  model = Comment
+  form_class = commentForm
+  template_name = 'addComment.html'
+  # fields = '__all__'
+  success_url = reverse_lazy('home')
+  def form_valid(self, form):
+    form.instance.post_id = self.kwargs['pk']
+    return super().form_valid(form)
+
 
 def glossaryPage(request):
   return render(request, 'users/glossary.html')

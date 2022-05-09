@@ -57,7 +57,9 @@ body {
   background-image: url("../Images/Michael-Jordan-Dunks-Basketball-Animated-Gif-Hot.gif");
 }
 
-.homeBtn {
+.homeBtn,
+.addPostLink,
+.addComment {
   text-decoration: none;
   color: white;
   font-size: larger;
@@ -124,4 +126,17 @@ body {
 }
 .onePost a:hover {
   background-color: #215155;
+}
+.addPostLink:hover {
+  text-decoration: underline;
+  background-color: #215155;
+}
+.addComment:hover {
+  text-decoration: underline;
+  background-color: #215155;
+}
+.editOr a {
+  text-decoration: none;
+  font-size: large;
+  color: white;
 }
