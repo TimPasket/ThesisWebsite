@@ -10,8 +10,8 @@
   </head>
   <body>
     <a class="homeBtn" href="{% url 'home' %}">Home</a>
-    <h1>{{post.title}}</h1>
-    <small>By: {{post.author.username}} </small>
+    <h1 class="postTitle">{{post.title}}</h1>
+    <h3 class="postAuthor">Author: {{post.author.username}} </h3>
     <br />
     {% if user.is_authenticated %} {%if request.user.id == post.author.id %}
     <div class='editOr'>
@@ -20,11 +20,11 @@
     {% endif %} {% endif %}
     </div>
     <hr />
-    <br />
+    <div class="postBody">
     {{post.body}}
-    <br />
-    <br />
-    <h2>Comment Section:</h2>
+    </div>
+    <div class="commentSection">
+    <h3 class="commentSectionTitle">Comment Section:</h3>
     {% if not post.comments.all %}
       No comments yet...<a href"{% url 'addComment' post.pk %}">Add one</a>
     {%else%}
